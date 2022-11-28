@@ -1,0 +1,7 @@
+
+import ./
+
+service AccountService {
+	
+	rpc LoginService ()
+}
