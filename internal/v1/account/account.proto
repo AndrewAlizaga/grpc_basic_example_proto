@@ -1,18 +1,18 @@
+syntax = "proto3";
 
+package account;
+
+option go_package = "github.com/AndrewAlizaga/grpc_basic_example_proto/account;accountv1";
+
+// Account
 message Account {
+	//inject_tag: bson:"id" json:"id"
 	string id = 1;
-	string name = 1;
-	string password = 2;
-	string password = 3;
+	//inject_tag: bson:"id" json:"id"
+	string name = 2;
+	//inject_tag: bson:"id" json:"id"
+	string email = 3;
+	//inject_tag: bson:"id" json:"id"
+	string password = 4;
 }
 
-message LoginRequest {
-	string email = 1;
-	string password = 2;
-}
-
-
-message LoginResponse {
-	string error = 1;
-	Account account  = 2;
-}

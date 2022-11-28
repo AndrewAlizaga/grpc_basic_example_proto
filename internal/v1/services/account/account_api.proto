@@ -1,7 +1,38 @@
+syntax = "proto3";
 
-import ./
+import "internal/v1/account/account.proto";
+
+package accountapi;
+
+option go_package = "github.com/AndrewAlizaga/grpc_basic_example_proto/accountapi;accountapiv1";
+
+
+message LoginRequest {
+	string email = 1;
+	string password = 2;
+}
+
+
+message LoginResponse {
+	string error = 1;
+	account.Account account  = 2;
+}
+
+message SignUpRequest {
+	account.Account account  = 1;
+}
+
+
+message SignUpResponse {
+	string error = 1;
+	string jwt  = 2;
+}
+
 
 service AccountService {
 	
-	rpc LoginService ()
+	rpc LoginService (LoginRequest) returns (LoginResponse){};
+
+	rpc SignUpService (SignUpRequest) returns (SignUpResponse){};	
+
 }
