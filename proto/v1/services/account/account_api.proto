@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-import "internal/v1/account/account.proto";
+import "proto/v1/account/account.proto";
 
 package accountapi;
 
-option go_package = "github.com/AndrewAlizaga/grpc_basic_example_proto/pkg/internal/v1/services/accountapi;accountapiv1";
+option go_package = "github.com/AndrewAlizaga/grpc_basic_example_proto/pkg/v1/services/accountapi;accountapiv1";
 
 
 message LoginRequest {
