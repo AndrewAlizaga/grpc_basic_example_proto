@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package account;
 
-option go_package = "github.com/AndrewAlizaga/grpc_basic_example_proto/pkg/v1/account;accountv1";
+option go_package = "github.com/AndrewAlizaga/grpc_basic_example_proto/pkg/proto/v1/account;accountv1";
 
 // Account
 message Account {
