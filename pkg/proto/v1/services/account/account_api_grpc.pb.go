@@ -53,15 +53,14 @@ func (c *accountServiceClient) SignUpService(ctx context.Context, in *SignUpRequ
 }
 
 // AccountServiceServer is the server API for AccountService service.
-// All implementations must embed UnimplementedAccountServiceServer
+// All implementations should embed UnimplementedAccountServiceServer
 // for forward compatibility
 type AccountServiceServer interface {
 	LoginService(context.Context, *LoginRequest) (*LoginResponse, error)
 	SignUpService(context.Context, *SignUpRequest) (*SignUpResponse, error)
-	mustEmbedUnimplementedAccountServiceServer()
 }
 
-// UnimplementedAccountServiceServer must be embedded to have forward compatible implementations.
+// UnimplementedAccountServiceServer should be embedded to have forward compatible implementations.
 type UnimplementedAccountServiceServer struct {
 }
 
@@ -71,7 +70,6 @@ func (UnimplementedAccountServiceServer) LoginService(context.Context, *LoginReq
 func (UnimplementedAccountServiceServer) SignUpService(context.Context, *SignUpRequest) (*SignUpResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SignUpService not implemented")
 }
-func (UnimplementedAccountServiceServer) mustEmbedUnimplementedAccountServiceServer() {}
 
 // UnsafeAccountServiceServer may be embedded to opt out of forward compatibility for this service.
 // Use of this interface is not recommended, as added methods to AccountServiceServer will

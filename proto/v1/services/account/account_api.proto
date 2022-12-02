@@ -29,7 +29,7 @@ message SignUpResponse {
 	string jwt  = 2;
 }
 
-
+// AccountService ...
 service AccountService {
 	
 	rpc LoginService (LoginRequest) returns (LoginResponse){};
