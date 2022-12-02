@@ -16,6 +16,7 @@ message LoginRequest {
 message LoginResponse {
 	string error = 1;
 	account.Account account  = 2;
+	string jwt  = 3;
 }
 
 message SignUpRequest {
